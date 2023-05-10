@@ -1,0 +1,56 @@
+<div class="mt-5 mb-5">
+    <label class="btn btn-primary">
+      Browser Filed
+      <input accept="video/*,image/*,text/plain" type="file" multiple="multiple" style="display: none;"
+             #fileInput (change)="processFileSelection(fileInput.files)">
+
+            
+    </label>
+
+    <div style="position: relative;">
+        <app-warning-popup class="file-upload" (filesChanged)="setFileList($event)">
+          <div>Drag and drop files here</div>
+          <div>
+            {{ fileList1 | json }}
+          </div>
+        </app-warning-popup>
+      </div>
+      
+    <p class="formats-text">Accepted Formats: Text, Audio and Video</p>
+    <ul class="file-list" *ngIf="files.length > 0">
+      <span>File Type | File Name | File Size | </span>
+      <li style="margin-top:10px;" *ngFor="let file of files; let i = index"><span>{{ file.type }} | {{ file.name }} |
+          {{ file.size }} bytes | </span><button class="btn btn-sm btn-secondary delete-list-item"
+                                               (click)="triggerPopup(i)">Delete</button></li>
+    </ul>
+  </div>
+
+<ng-template #errorPopup let-modal>
+	<div class="modal-header">
+		<h4 class="modal-title">Sorry</h4>
+    <h4 class="modal-title" *ngIf="!delete">Confirm</h4>
+	</div>
+	<div class="modal-body">
+		<p *ngIf="errorType == 'numError'">Sorry, you can only attach 5 documents.</p>
+    <p *ngIf="errorType == 'sizeError'">Sorry, you cannot attach files greater than 5MB.</p>
+    <p *ngIf="errorType=='deleteFile'">Are you sure you want to delete this resource?</p>
+	</div>
+	<div class="modal-footer">
+    <button type="button" class="btn btn-primary" *ngIf="delete" (click)="deleteAttachment();modal.close('Close click')">Delete Resource</button>
+		<button type="button" class="btn btn-secondary" (click)="modal.close('Close click')">Close</button>
+	</div>
+</ng-template>
+
+<!-- 
+<ng-template #deletePopup let-modal>
+	<div class="modal-header">
+		<h4 class="modal-title">Confirm</h4>
+	</div>
+	<div class="modal-body">
+		
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-primary" (click)="deleteAttachment();modal.close('Close click')">Delete Resource</button>
+		<button type="button" class="btn btn-secondary" (click)="modal.close('Close click')">Cancel</button>
+	</div>
+</ng-template> -->

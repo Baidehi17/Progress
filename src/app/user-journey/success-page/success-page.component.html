@@ -1,0 +1,5 @@
+<ul class="file-list" *ngIf="files.length > 0">
+    <span>File Type | File Name | File Size | </span>
+    <li style="margin-top:10px;" *ngFor="let file of files; let i = index"><span>{{ file.type }} | {{ file.name }} |
+        {{ file.size }} bytes | </span></li>
+  </ul>
