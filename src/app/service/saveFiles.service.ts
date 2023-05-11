@@ -10,12 +10,16 @@ import { MsalTokenService } from './msal-token.service';
 export class FileSaverService {
 
   private files = new BehaviorSubject<any>([]);
+
   attachedFiles = this.files.asObservable();
+  
   constructor(private http:HttpClient, private msalService:MsalTokenService) {}
 
   addFiles(newFiles: any){
     this.files.next(newFiles)
   }
+
+
 
 
 

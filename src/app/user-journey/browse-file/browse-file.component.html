@@ -5,26 +5,8 @@
              #fileInput (change)="processFileSelection(fileInput.files)">                <!-- <input accept="video/*,image/*,text/plain" -->
     </label>
 
-    <div style="position: relative;">
-        <app-drag-drop-file class="file-upload" (filesChanged)="processFileSelection($event)">
-          <div>Drag and drop files here</div>
-          <div *ngFor="let file of files; let i = index">
-            {{ file.name}}
-          </div>
-        </app-drag-drop-file>
-      </div>
-      
-    <p class="formats-text">Accepted Formats: Text, Audio and Video</p>
-    <ul class="file-list" *ngIf="files.length > 0">
-      <span>File Name | File Size | </span>
-      <li style="margin-top:10px;" *ngFor="let file of files; let i = index">
-        <span> {{ file.name }} | {{ file.size }} </span>
-          <button class="btn btn-sm btn-secondary delete-list-item" (click)="triggerPopup(i)">Delete</button>
-          
-        </li>
-    </ul>
-  </div>
 
+    
 <ng-template #errorPopup let-modal>
 	<div class="modal-header">
 		<h4 class="modal-title" *ngIf="!delete">Sorry</h4>
@@ -40,4 +22,3 @@
 		<button type="button" class="btn btn-secondary" (click)="modal.close('Close click')">Close</button>
 	</div>
 </ng-template>
-

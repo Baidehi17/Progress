@@ -1,15 +1,13 @@
-import { Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { EventService } from 'src/app/service/event.service';
 import { FileSaverService } from 'src/app/service/saveFiles.service';
 
 @Component({
-  selector: 'app-file',
-  templateUrl: './file.component.html',
-  styleUrls: ['./file.component.scss']
+  selector: 'app-browse-file',
+  templateUrl: './browse-file.component.html',
+  styleUrls: ['./browse-file.component.scss']
 })
-export class FileComponent implements OnInit{
-
+export class BrowseFileComponent {
   @ViewChild('deletePopup') deletePopup!: ElementRef;
   @ViewChild('errorPopup') errorPopup!: ElementRef;
   maxNo=5;  
@@ -72,8 +70,6 @@ delete:boolean=false;
     }
   }
 }
-
-
 //using Array.from(event) convert array like obj to array and then get the name.
 // setFileList(event:FileList)
   // {

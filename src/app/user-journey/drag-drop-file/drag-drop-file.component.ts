@@ -1,17 +1,15 @@
 import { Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
-import { DragDropDirective } from '../../Directive/drag-drop.directive';
 
 @Component({
-  selector: 'app-warning-popup',
-  templateUrl: './warning-popup.component.html',
-  styleUrls: ['./warning-popup.component.scss']
+  selector: 'app-drag-drop-file',
+  templateUrl: './drag-drop-file.component.html',
+  styleUrls: ['./drag-drop-file.component.scss']
 })
-export class WarningPopupComponent {
+export class DragDropFileComponent {
 
-  //@Input() multiple!: boolean;
   @Input() fileType!: string;
   @Input() dragDropEnabled = true;
-  @Output() filesChanged: EventEmitter<FileList>; //child to parent,  send to file component
+  @Output() filesChanged: EventEmitter<FileList>;   //child to parent,  send to file component
 
   @ViewChild('fileInput') inputRef!: ElementRef<HTMLInputElement>;
 
