@@ -4,7 +4,6 @@ import {MSAL_GUARD_CONFIG, MsalBroadcastService, MsalGuardConfiguration, MsalSer
 import { Subject, filter, takeUntil } from 'rxjs';
 import { enviroment } from 'src/environment/environment';
 import { AzureADService } from './service/azure-ad.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -54,21 +53,4 @@ export class AppComponent implements OnInit, OnDestroy{
   {
     this.authService.logoutRedirect({postLogoutRedirectUri:enviroment.postLogoutUrl});
   }
-
-  // constructor(private msalService:MsalService){
-  // }
-
-  // isLoggedIn():boolean{
-  //   return this.msalService.instance.getActiveAccount()!=null
-  // }
-  // login()
-  // {
-  //   this.msalService.loginPopup().subscribe((res:AuthenticationResult)=>{
-  //     this.msalService.instance.setActiveAccount(res.account)
-  //   });
-  // }
-  // logout()
-  // {
-  //   this.msalService.logout();
-  // }
 }

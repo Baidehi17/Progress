@@ -1,0 +1,14 @@
+<ng-template #popup>
+    <app-error-messg [title]="popupTitle" [message]="popupMessage"></app-error-messg>
+</ng-template>
+
+
+<label class="drag-zone" [appDragDrop]="dragDropEnabled" (dropped)="handleFileDrop($event)">
+    <input  accept="*" type="file" (change)="addFiles(fileInput.files)" #fileInput class="visually-hidden"/>
+    <div >Drag and drop files here</div> 
+    <ng-content></ng-content>
+</label>
+  
+  
+  
+  

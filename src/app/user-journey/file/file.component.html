@@ -1,8 +1,49 @@
-<div class="mt-5 mb-5">
+<app-browse-file [maxFileSize]="maxSize" [maxFileLimt]="maxFileLimit"></app-browse-file>
+
+<app-drag-drop-file class="file-upload" [maxFileSize]="maxSize" [maxFileLimt]="maxFileLimit">
+  <div *ngFor="let file of files; let i = index">
+    {{ file.name}}
+  </div>
+</app-drag-drop-file>
+
+
+<ul class="file-list" *ngIf="files.length > 0">
+  <span>File Name | File Size | </span>
+  <li style="margin-top:10px;" *ngFor="let file of files; let i = index">
+    <span> {{ file.name }} | {{ file.size }} </span>
+    </li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="mt-5 mb-5">
     <label class="btn btn-primary">
       Browser Filed
       <input accept=".pdf" type="file" multiple="multiple" style="display: none;"
-             #fileInput (change)="processFileSelection(fileInput.files)">                <!-- <input accept="video/*,image/*,text/plain" -->
+             #fileInput (change)="processFileSelection(fileInput.files)">              
     </label>
 
     <div style="position: relative;">
@@ -40,4 +81,4 @@
 		<button type="button" class="btn btn-secondary" (click)="modal.close('Close click')">Close</button>
 	</div>
 </ng-template>
-
+ -->

@@ -9,13 +9,11 @@ import { FileSaverService } from 'src/app/service/saveFiles.service';
 export class SuccessPageComponent {
   
   public files: File[] = [];
-  public fileList1!:string[];
   constructor(private fileSave: FileSaverService) { }
 
   ngOnInit(): void {
     this.fileSave.attachedFiles.subscribe(res => {
       this.files = res;
-      this.fileList1 = Array.from(this.files).map(f => f.name);
     });
   }
 }

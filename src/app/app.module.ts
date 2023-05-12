@@ -10,6 +10,7 @@ import { IPublicClientApplication, InteractionType, PublicClientApplication } fr
 import { CommonModule } from '@angular/common';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AzureADService } from './service/azure-ad.service';
+import { SharedModule } from './shared/shared.module';
 
 // export function MSALInstance(): IPublicClientApplication{
 //   return new PublicClientApplication(
@@ -33,6 +34,7 @@ import { AzureADService } from './service/azure-ad.service';
     AppRoutingModule,
     UserJourneyModule,
     CommonModule,
+    SharedModule,
     NgbModule,
     MsalModule.forRoot(new PublicClientApplication(
       {

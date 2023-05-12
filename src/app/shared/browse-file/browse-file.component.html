@@ -1,0 +1,10 @@
+<ng-template #popupTemplate>
+    <app-error-messg [title]="popupTitle" [message]="popupMessage"></app-error-messg>
+  </ng-template>
+                                                                                                                                                                                                    <!-- video/*,image/*,text/plain/.pdf/documents      -->
+<div class="mt-5 mb-5">
+    <label class="btn btn-primary">
+      Browser Filed
+      <input accept="*" type="file" multiple="multiple" style="display: none;" #fileInput (change)="processFileSelection(fileInput.files)">          
+    </label>
+</div>
