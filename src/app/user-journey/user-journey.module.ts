@@ -31,9 +31,7 @@ import { SharedModule } from '../shared/shared.module';
     SharedModule
   ],
   exports : [
-    WeatherComponent,
-    HomeComponent,
-    FileComponent
+    HomeComponent
   ]
 })
 export class UserJourneyModule { }

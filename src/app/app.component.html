@@ -1,11 +1,5 @@
-<div>
-    <button (click)="login()" *ngIf="!isLoggedIn">login </button>
-    <h3 *ngIf="isLoggedIn">you r logged in</h3>
-
-    <button (click)="logOut()" *ngIf="isLoggedIn">Sign out</button>
-    <h3 *ngIf="!isLoggedIn">you are not in</h3>
-    
-    <app-home *ngIf="isLoggedIn"></app-home>
+<div>    
+    <app-home></app-home>
 </div>
 
 

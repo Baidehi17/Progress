@@ -9,13 +9,4 @@ import { weatherData } from 'src/app/Model/weatherData';
 })
 export class WeatherComponent {
 
-  constructor(private WeatherApi: FileSaverService){}
-
-  
-  data : weatherData []=[];
-  ngOnInit(): void {
-    this.WeatherApi.getWeatherReport().subscribe(res=>{
-      this.data=res
-    })
-  }
 }

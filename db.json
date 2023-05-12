@@ -1,5 +1,30 @@
 {
-  "userDetails" : [{
-    
-  }]
+  "userDetails": [
+    {
+      "id": 1,
+      "firstName": "aman",
+      "preferredName": "aman12",
+      "email": "aman@gmail.com",
+      "password": "aman12",
+      "acceptTerms": "true"
+    },
+    {
+      "firstName": "3qwere",
+      "preferredName": "qwerwqer",
+      "email": "aman@gmail.com",
+      "password": "aman1234",
+      "confirmPassword": "aman1234",
+      "acceptTerms": true,
+      "id": 2
+    },
+    {
+      "firstName": "assdfs",
+      "preferredName": "wert345r",
+      "email": "aman@gmail.com",
+      "password": "aman1234",
+      "confirmPassword": "aman1234",
+      "acceptTerms": true,
+      "id": 3
+    }
+  ]
 }

@@ -1,8 +1,8 @@
 export class userDetails{
-    name! :string;
+    id!:number
+    firstName! :string;
+    preferredName!:string;
     email!:string;
     password!: string;
-    id!:number;
-    phoneNumber!:string;
-
+    acceptTerms!:boolean;
 }

@@ -1,36 +1,32 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component} from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators, AbstractControl } from '@angular/forms';
-
+import { ValidationService } from 'src/app/service/validation.service';
+import {FileSaverService} from '../../service/saveFiles.service'
+import { userDetails } from 'src/app/Model/userDetails';
 @Component({
   selector: 'app-personal-information',
   templateUrl: './personal-information.component.html',
   styleUrls: ['./personal-information.component.scss']
 })
 export class PersonalInformationComponent {
- 
 
-  form: FormGroup = new FormGroup({
-    fullname: new FormControl(''),
-    username: new FormControl(''),
+  userDetail! : userDetails[];
+
+    form: FormGroup = new FormGroup({
+    firstName: new FormControl(''),
+    preferredName: new FormControl(''),
     email: new FormControl(''),
     password: new FormControl(''),
     confirmPassword: new FormControl(''),
     acceptTerms: new FormControl(false),
   });
   submitted = false;
-  id!: string;
-  isAddMode!: boolean;
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(private formBuilder: FormBuilder, private userService: FileSaverService) {}
 
-  ngOnInit(): void {
-   
-    this.isAddMode = !this.id;
-
-   
+  ngOnInit(): void {   
     this.form = this.formBuilder.group(
       {
-        skypeId:['',Validators.required,
-        Validators.minLength(4)],
+        
         firstName: ['', Validators.required],
         preferredName: [
           '',
@@ -47,23 +43,32 @@ export class PersonalInformationComponent {
             Validators.required,
             Validators.minLength(6),
             Validators.maxLength(40),
-            Validators.pattern('^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$'),
+            //Validators.pattern('^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$'),
           ],
         ],
         confirmPassword: ['', Validators.required],
+        
         acceptTerms: [false, Validators.requiredTrue],
+      },
+      {
+        Validators: ValidationService.match('password','confirmPassword')
       }
     );
-  }
-
-  get formControl() {
-    return this.form.controls;
   }
   get f(): { [key: string]: AbstractControl } {
     return this.form.controls;
   }
   onSubmit(): void {
-    this.submitted = true;
- 
-}
+    this.submitted = true; 
+    if(this.form.invalid)
+    {
+      return
+    }
+    else{
+      this.userService.addNewUser(this.form.value).subscribe(
+        res=>{this.userDetail = res
+        console.log(this.userDetail)
+      })
+    }
+  }
 }
