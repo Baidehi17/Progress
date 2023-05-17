@@ -1,6 +1,6 @@
 import { Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { FileSaverService } from 'src/app/service/saveFiles.service';
+import { FileSaverService } from 'src/app/service/save-files.service';
 import {DragDropDirective} from '../../Directive/drag-drop.directive'
 
 @Component({
@@ -27,6 +27,8 @@ export class DragDropFileComponent {
     this.fileSave.attachedFiles.subscribe(res => {
       this.files = res;
     });
+    console.log("drag&drop component");
+
   }
 
   addFiles(selectedFiles: FileList | null): void {

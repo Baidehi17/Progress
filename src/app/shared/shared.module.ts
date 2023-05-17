@@ -21,7 +21,8 @@ import { DragDropFileComponent } from './drag-drop-file/drag-drop-file.component
   ],
   exports:[
     BrowseFileComponent,
-    DragDropFileComponent
+    DragDropFileComponent,
+    ErrorMessgComponent
   ]
 })
 export class SharedModule { }

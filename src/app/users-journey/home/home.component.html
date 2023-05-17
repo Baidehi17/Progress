@@ -1,0 +1,14 @@
+<div class="container">
+    <app-side-bar></app-side-bar>
+    <div class="main">
+        <ngb-progressbar type="success" class="mt-4"
+            [value]="(currentPage.pageNo - 1) / (Page.length-1) * 100"></ngb-progressbar>
+
+        <ng-template [ngComponentOutlet]="currentPage.Component" ></ng-template>
+
+        <br>
+
+        <button *ngIf="currentPage.pageNo > 1" (click)="previousPage()" clas="me-5">Previous</button>
+        <button *ngIf="currentPage.pageNo < Page.length" (click)="nextPage()" >Next</button>   
+    </div>
+</div>

@@ -1,6 +1,6 @@
 import { Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { FileSaverService } from 'src/app/service/saveFiles.service';
+import { FileSaverService } from 'src/app/service/save-files.service';
 
 @Component({
   selector: 'app-browse-file',
