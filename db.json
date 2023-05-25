@@ -61,60 +61,7 @@
       "confirmPassword": "aman1234",
       "acceptTerms": true,
       "id": 7
-    },
-    {
-      "firstName": "4rt54y6",
-      "preferredName": "45t54y",
-      "email": "aman@gmail.com",
-      "password": "aman1234",
-      "confirmPassword": "aman1234",
-      "acceptTerms": true,
-      "id": 8
-    },
-    {
-      "firstName": "jerkjek",
-      "preferredName": "werewr",
-      "email": "aman@gmail.com",
-      "password": "aman1234",
-      "confirmPassword": "aman1234",
-      "acceptTerms": true,
-      "id": 9
-    },
-    {
-      "firstName": "jerkjek",
-      "preferredName": "werewr",
-      "email": "aman@gmail.com",
-      "password": "aman1234",
-      "confirmPassword": "aman1234",
-      "acceptTerms": true,
-      "id": 10
-    },
-    {
-      "firstName": "jerkjek",
-      "preferredName": "werewr",
-      "email": "aman@gmail.com",
-      "password": "aman1234",
-      "confirmPassword": "aman1234",
-      "acceptTerms": true,
-      "id": 11
-    },
-    {
-      "firstName": "jerkjek",
-      "preferredName": "werewr",
-      "email": "aman@gmail.com",
-      "password": "aman1234",
-      "confirmPassword": "aman1234",
-      "acceptTerms": true,
-      "id": 12
-    },
-    {
-      "firstName": "jerkjek",
-      "preferredName": "werewr",
-      "email": "aman@gmail.com",
-      "password": "aman1234",
-      "confirmPassword": "aman1234",
-      "acceptTerms": true,
-      "id": 13
     }
+   
   ]
 }

@@ -17,8 +17,8 @@
           </div>
         </div>
 
-        <div class="form-group">
-          <label>preferredName</label>
+        <!-- <div class="form-group">
+          <label>Preferred Name</label>
           <input type="text" formControlName="preferredName" class="form-control"
             [ngClass]="{ 'is-invalid': submitted && f['preferredName'].errors }" />
           <div *ngIf="submitted && f['preferredName'].errors" class="invalid-feedback">
@@ -26,9 +26,9 @@
             <div *ngIf="f['preferredName'].errors['minlength']">Username must be at least 6 characters</div>
             <div *ngIf="f['preferredName'].errors['maxlength']">
               Username must not exceed 20 characters
-            </div>
+            </div>  
           </div>
-        </div>
+        </div> -->
 
         <div class="form-group">
           <label>Email</label>
@@ -56,7 +56,7 @@
           </div>
         </div>
 
-        <div class="form-group">
+        <!-- <div class="form-group">
           <label>Confirm Password</label>
           <input type="password" formControlName="confirmPassword" class="form-control"
             [ngClass]="{ 'is-invalid': submitted && f['confirmPassword'].errors }" />
@@ -68,7 +68,7 @@
               Confirm Password does not match
             </div>
           </div>
-        </div>
+        </div> -->
 
         <div class="form-group form-check">
           <input type="checkbox" formControlName="acceptTerms" class="form-check-input"
@@ -78,12 +78,6 @@
             Accept Terms is required
           </div>
         </div>
-
-        <!-- <div class="form-group">
-          <div class="text-center mt-3">
-            <input type="submit" class="btn btn-outline-dark">
-          </div>
-        </div> -->
       </form>
     </div>
   </div>

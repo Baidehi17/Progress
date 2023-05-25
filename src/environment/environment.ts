@@ -1,4 +1,5 @@
 export const enviroment = {
     production: false,
-    postLogoutUrl : "http://localhost:4200"
-}
+    name: "Dev",
+    apiUrl: " http://localhost:3000/",
+};

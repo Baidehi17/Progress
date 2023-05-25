@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { userDetails } from 'src/app/Model/userDetails';
+import { ActivatedRoute } from '@angular/router';
+import { userDetails } from 'src/app/model/userDetails';
 import { FileSaverService } from 'src/app/service/save-files.service';
 
 @Component({
@@ -9,17 +10,15 @@ import { FileSaverService } from 'src/app/service/save-files.service';
 })
 export class HomeComponent implements OnInit{
  
- constructor(private getUsers:FileSaverService){}
+ constructor(private route:ActivatedRoute){  
+  setTimeout(() => {
+    this.userdetails = this.route.snapshot.data['userDetail']
+  }, 5000);
+  
+ }
 
  userdetails:userDetails[] =[];
   ngOnInit(): void {
-    this.getUsers.GetUsers().subscribe(
-      res=>{
-        this.userdetails = res
-        console.log(this.userdetails)
-      }
-    )
+  
   }
-
-
 }

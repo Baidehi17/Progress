@@ -5,12 +5,16 @@ import { AppComponent } from './app.component';
 import { CommonModule } from '@angular/common';
 import {HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './shared/shared.module';
-import { LoginComponent } from './Components/login/login.component';
-import { ForgetPasswordComponent } from './Components/forget-password/forget-password.component';
-import { NotFoundComponent } from './Components/not-found/not-found.component';
+import { LoginComponent } from './components/login/login.component';
+import { ForgetPasswordComponent } from './components/forget-password/forget-password.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 import {FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MainComponent } from './Components/main/main.component';
-import { HeaderComponent } from './Components/header/header.component';
+import { MainComponent } from './components/main/main.component';
+import { HeaderComponent } from './components/header/header.component';
+import { UserResolverService } from './service/user-resolver.service';
+import { UsersJourneyModule } from './users-journey/users-journey.module';
+import { TRANSLOCO_CONFIG, TranslocoConfig, TranslocoModule } from '@ngneat/transloco';
+import { TranslocoRootModule } from './transloco-root.module';
 
 
 @NgModule({
@@ -30,8 +34,10 @@ import { HeaderComponent } from './Components/header/header.component';
     SharedModule,
     FormsModule,
     ReactiveFormsModule,
+    UsersJourneyModule,
+    TranslocoRootModule
   ],
-  providers: [  ],
+  providers: [UserResolverService,TranslocoModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

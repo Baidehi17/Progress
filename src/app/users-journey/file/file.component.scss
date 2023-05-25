@@ -1,9 +1,35 @@
+.file-upload {
+  display: block;
+  height: 2.3rem;
+ width: 25rem;
 
-  .file-upload {
-    display: block;
-    height: 200px;
-    width: 400px;
-    max-width: 100%;
-    margin: 30px auto;
-  }
-  
+}
+.basic-claim {
+  font-size: 1.1rem;
+  color: rgb(168, 158, 158);
+}
+.policy {
+  display: flex;
+  flex-direction: column;
+}
+input {
+  width: 18rem;
+  border-color: #aca9ac;
+  border-radius: 0.4rem;
+}
+.app-browse-file .label{
+border-radius: 1rem;
+}
+
+
+:host ::ng-deep app-browse-file .btn{
+  background-color:#6356db;
+  color: #ffffff;
+  border-radius: 2rem;
+}
+.UploadfileZone{
+  border-style: dashed;
+  border-color:#e2dee2 ;
+ // width: 40rem;
+  margin-left: 0.1rem;
+}

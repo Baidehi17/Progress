@@ -1,8 +1,8 @@
 import { Component,ViewChild} from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators, AbstractControl } from '@angular/forms';
 import { ValidationService } from 'src/app/service/validation.service';
-import {FileSaverService} from '../../service/save-files.service'
-import { userDetails } from 'src/app/Model/userDetails';
+import {FileSaverService} from '../../service/save-files.service';
+import { userDetails } from 'src/app/model/userDetails';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { FormInteractionService } from 'src/app/service/form-interaction.service';
 
@@ -66,8 +66,7 @@ export class PersonalInformationComponent {
       if (val) {
         if(this.form.invalid)
         {
-        this.submitted = true;
-       // this.form.markAsDirty(); 
+        this.submitted = true; 
         }
         else{
           if(this.form.value.id)
@@ -81,7 +80,7 @@ export class PersonalInformationComponent {
       }      
     })
     this.formInteractionService.userIformation.subscribe(val=>{
-      this.form.setValue(val);
+      this.form.patchValue(val);
 
     })  
   }

@@ -12,6 +12,8 @@ import { SideBarComponent } from './side-bar/side-bar.component';
 import { SuccessPageComponent } from './success-page/success-page.component';
 import { FileComponent } from './file/file.component';
 import { FormInteractionService } from '../service/form-interaction.service';
+import { HeaderComponent } from './header/header.component';
+import { TRANSLOCO_CONFIG, TranslocoConfig, TranslocoModule } from '@ngneat/transloco';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,8 @@ import { FormInteractionService } from '../service/form-interaction.service';
     AcceptConditionComponent,
     SideBarComponent,
     SuccessPageComponent,
-    FileComponent
+    FileComponent,
+    HeaderComponent
   ],
   imports: [
     CommonModule,
@@ -28,12 +31,12 @@ import { FormInteractionService } from '../service/form-interaction.service';
     ReactiveFormsModule,
     SharedModule,
     FormsModule,
-    NgbProgressbarModule
+    NgbProgressbarModule,
+    TranslocoModule
   ],
   exports : [
+    HomeComponent
   ],
-  providers: [
-    FormInteractionService
-  ]
+  providers: [FormInteractionService]
 })
 export class UsersJourneyModule { }

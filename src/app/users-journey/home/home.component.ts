@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
-import { CurrentPage } from 'src/app/Model/currentPage';
+import { CurrentPage } from 'src/app/model/currentPage';
 import { Page } from 'src/app/service/const';
 import { FormInteractionService } from 'src/app/service/form-interaction.service';
 import { FileSaverService } from 'src/app/service/save-files.service';

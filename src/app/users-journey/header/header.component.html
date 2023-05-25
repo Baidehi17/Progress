@@ -1,0 +1,5 @@
+<div class="dropdown">
+  <select [(ngModel)]="selectedLang" (ngModelChange)="updateLocale($event)" class="form-control">
+    <option *ngFor="let item of langs" [ngValue]="item.value">{{item.label}}</option>
+  </select>
+</div>

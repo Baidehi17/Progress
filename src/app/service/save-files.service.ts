@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
+import { enviroment } from 'src/environment/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -9,11 +10,9 @@ import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 export class FileSaverService {
 
   private files = new BehaviorSubject<any>([]);
+  attachedFiles = this.files.asObservable();
 
   private submitDisable = new BehaviorSubject<boolean>(false);
-  
-
-  attachedFiles = this.files.asObservable();
 
   nextPageValidation = this.submitDisable.asObservable();
 
@@ -28,7 +27,7 @@ export class FileSaverService {
   }
 
 
-  userurl='http://localhost:3000/userDetails';
+  userurl= enviroment.apiUrl+'userDetails' // 'http://localhost:3000/userDetails';
 
   addNewUser(details:any):Observable<any>
   {
