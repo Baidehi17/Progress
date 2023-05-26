@@ -12,15 +12,18 @@ export class FileSaverService {
   private files = new BehaviorSubject<any>([]);
   attachedFiles = this.files.asObservable();
 
+  addFiles(newFiles: any){
+    this.files.next(newFiles)
+  }
+
+  
   private submitDisable = new BehaviorSubject<boolean>(false);
 
   nextPageValidation = this.submitDisable.asObservable();
 
   constructor(private http:HttpClient) {}
 
-  addFiles(newFiles: any){
-    this.files.next(newFiles)
-  }
+ 
 
   nextPageAble(value:boolean){
     this.submitDisable.next(value);

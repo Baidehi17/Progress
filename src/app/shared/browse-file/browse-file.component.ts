@@ -1,4 +1,4 @@
-import { Component, ElementRef, EventEmitter, Input, Output, ViewChild } from '@angular/core';
+import { Component, Input, ViewChild } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { FileSaverService } from 'src/app/service/save-files.service';
 
@@ -9,10 +9,10 @@ import { FileSaverService } from 'src/app/service/save-files.service';
 })
 export class BrowseFileComponent {
 
-  @ViewChild('popupTemplate') popupTemplate:any;
+  @ViewChild('popupTemplate') popupTemplate: any;
 
-  @Input() maxFileSize!:any;
-  @Input() maxFileLimt!:number
+  @Input() maxFileSize!: any;
+  @Input() maxFileLimt!: number
 
   popupTitle!: string;
   popupMessage!: string;
@@ -34,9 +34,9 @@ export class BrowseFileComponent {
     //check the number of file
     const diff = this.maxFileLimt - this.files.length;
     if (selectedFiles.length > diff) {
-      this.popupTitle ="Sorry";
-      this.popupMessage="Sorry, you can only attach 5 documents";
-      this.modalService.open(this.popupTemplate, { centered: true });    
+      this.popupTitle = "Sorry";
+      this.popupMessage = "Sorry, you can only attach 5 documents";
+      this.modalService.open(this.popupTemplate, { centered: true });
       return;
     }
     for (let i = 0; i < selectedFiles.length; i++) {
@@ -49,9 +49,9 @@ export class BrowseFileComponent {
         } as unknown as File);
 
       } else {
-        this.popupTitle ="Sorry";
-        this.popupMessage="Sorry, you cannot attach files greater than 5MB";       
-        this.modalService.open(this.popupTemplate, { centered: true });    
+        this.popupTitle = "Sorry";
+        this.popupMessage = "Sorry, you cannot attach files greater than 5MB";
+        this.modalService.open(this.popupTemplate, { centered: true });
         return;
       }
     }
