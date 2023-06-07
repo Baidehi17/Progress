@@ -18,7 +18,7 @@ const routes: Routes = [
       import('./modules/admin/admin.module').then((m) => m.AdminModule),
   }, //lazyLoading
   {
-    path: 'main/GG',
+    path: 'GG',
     loadChildren: () =>
       import('./users-journey/users-journey.module').then(
         (m) => m.UsersJourneyModule

@@ -11,27 +11,30 @@ import { NotFoundComponent } from './Components/not-found/not-found.component';
 import {FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MainComponent } from './Components/main/main.component';
 import { HeaderComponent } from './Components/header/header.component';
+import { CommanModule } from "./comman/comman.module";
 
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    LoginComponent,
-    ForgetPasswordComponent,
-    NotFoundComponent,
-    MainComponent,
-    HeaderComponent
-  ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    AppRoutingModule,
-    CommonModule,
-    SharedModule,
-    FormsModule,
-    ReactiveFormsModule,
-  ],
-  providers: [  ],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        LoginComponent,
+        ForgetPasswordComponent,
+        NotFoundComponent,
+        MainComponent,
+        HeaderComponent
+    ],
+    providers: [],
+    bootstrap: [AppComponent],
+    imports: [
+        BrowserModule,
+        HttpClientModule,
+        AppRoutingModule,
+        CommonModule,
+        SharedModule,
+        FormsModule,
+        ReactiveFormsModule,
+        CommonModule,
+        CommanModule
+    ]
 })
 export class AppModule { }

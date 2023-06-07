@@ -5,6 +5,7 @@ import {FileSaverService} from '../../service/save-files.service'
 import { userDetails } from 'src/app/Model/userDetails';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { FormInteractionService } from 'src/app/service/form-interaction.service';
+import { ToastServiceService } from 'src/app/service/toast-service.service';
 
 @Component({
   selector: 'app-personal-information',
@@ -28,7 +29,7 @@ export class PersonalInformationComponent {
     acceptTerms: new FormControl(false),
   });
   submitted = false;
-  constructor(private formBuilder: FormBuilder, private userService: FileSaverService, private ModelService:NgbModal, private formInteractionService:FormInteractionService) {}
+  constructor(private formBuilder: FormBuilder, private userService: FileSaverService, private ModelService:NgbModal, private formInteractionService:FormInteractionService,private toast:ToastServiceService) {}
 
   ngOnInit(): void { 
     
@@ -66,8 +67,14 @@ export class PersonalInformationComponent {
       if (val) {
         if(this.form.invalid)
         {
+          this.toast.show('I am a success toast', {
+            classname: 'bg-danger text-light',
+            delay: 2000 ,
+            autohide: true,
+            headertext: 'Error!!!'
+          });
         this.submitted = true;
-       // this.form.markAsDirty(); 
+       
         }
         else{
           if(this.form.value.id)

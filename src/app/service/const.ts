@@ -3,6 +3,7 @@ import { FileComponent } from "../users-journey/file/file.component";
 import { PersonalInformationComponent } from "../users-journey/personal-information/personal-information.component";
 import { SuccessPageComponent } from "../users-journey/success-page/success-page.component";
 
+
 export const Page: any[] = [
   
   { id: 2, name: 'PersonalInformation', Component: PersonalInformationComponent, pageNo: 1 },
