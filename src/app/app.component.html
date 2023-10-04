@@ -3,5 +3,27 @@
 </div> -->
 
 
-<router-outlet></router-outlet>
-<app-toast></app-toast>
+<!-- <router-outlet></router-outlet>
+<app-toast></app-toast> -->
+
+<div class="card m-3">
+	<h5 class="card-header">Add/Remove Form Classes Using a Directive</h5>
+	<div class="card-body">
+		<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+			<div class="form-group">
+				<label>Email</label>
+                <input type="text" formControlName="email" class="form-control" appCheckFormFieldValidity>
+            </div>
+            <div class="form-row">
+                <div class="form-group col">
+                    <label>Password</label>
+                    <input type="password" formControlName="password" class="form-control" appCheckFormFieldValidity>
+                </div>
+            </div>
+            <div class="text-center">
+                <button class="btn btn-primary mr-1">Login</button>
+                <button class="btn btn-secondary" type="reset" (click)="onReset()">Cancel</button>
+            </div>
+        </form>
+    </div>
+</div>

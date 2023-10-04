@@ -12,6 +12,7 @@ import {FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MainComponent } from './Components/main/main.component';
 import { HeaderComponent } from './Components/header/header.component';
 import { CommanModule } from "./comman/comman.module";
+import { CheckFormFieldValidity } from './directive/CheckFormFieldValidity.directive';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { CommanModule } from "./comman/comman.module";
         FormsModule,
         ReactiveFormsModule,
         CommonModule,
-        CommanModule
+        CommanModule,
+        
     ]
 })
 export class AppModule { }
